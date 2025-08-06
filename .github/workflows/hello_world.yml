@@ -1,0 +1,53 @@
+# https://docs.github.com/en/actions
+
+name: Hello World Workflow
+
+on:
+    push:
+        branches:
+        - main
+        - develop
+    
+    pull_request:
+        branches:
+        - main
+        - develop
+    
+    workflow_dispatch:
+    # schedule:
+    #     - cron: '0 0 * * *'  # Runs every day at midnight UTC
+
+jobs:
+    hello_world:
+        runs-on: ubuntu-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        
+        - name: Print Hello World
+          run: echo "Hello!! World!"
+          shell: bash
+        
+        - name: Print current date and time
+          run: date
+
+    good_bye_world:
+        runs-on: ubuntu-latest
+        
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        
+        - name: Print Goodbye World
+          run: echo "Goodbye, World!"
+          shell: bash
+        
+        - name: Print current date and time
+          run: date
+
+
+
+    
